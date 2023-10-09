@@ -26,7 +26,7 @@ public abstract class BattleLoc extends Location {
         selectCase =selectCase.toUpperCase();
         if (selectCase.equals("S") && (combat(mnstrNumber))) {
             System.out.println(this.getName() + " tüm düşmanları yendiniz !");
-            this.getPlayer().getInventory().getAwards()[this.awardId] = 1;
+            this.getPlayer().getInventory().getAwards()[this.awardId] = 1;//Gelen index değerlerini hepsini 1 e eşitliyorum...
             return true;
         }
         if (this.getPlayer().getHealth() == 0) {
@@ -66,7 +66,6 @@ public abstract class BattleLoc extends Location {
 
                         }
                     }
-
 
                 } else {
                     return false;
