@@ -11,7 +11,7 @@ public class Brand {
     }
 
     public Brand(String brandName){
-        this.ID=brands.size();
+        this.ID=brands.size()+1;
         this.brandName=brandName;
     }
 
@@ -38,7 +38,7 @@ public class Brand {
     public static void printBrands() {
         Collections.sort(brands,Comparator.comparing(Brand::getBrandName));
         for (Brand b : brands) {
-            System.out.println(b.brandName);
+            System.out.println(b.getBrandName()+" "+"Sistemdeki ID karşılığı : "+b.getID());
         }
     }
 
