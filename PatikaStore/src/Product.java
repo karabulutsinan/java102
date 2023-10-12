@@ -97,12 +97,4 @@ public abstract class Product {
     public void setScreenSize(double screenSize) {
         this.screenSize = screenSize;
     }
-
-    /*public static ArrayList<Product> getProducts() {
-        return products;
-    }*/
-
-    /*public static void setProducts(ArrayList<Product> products) {
-        Product.products = products;
-    }*/
 }
