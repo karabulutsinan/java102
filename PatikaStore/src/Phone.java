@@ -17,13 +17,11 @@ public class Phone extends Product {
         this.color = color;
     }
 
-
     static {
         phones.add(new Phone(1, "SAMSUNG GALAXY A51", 3199.0, 0.5, 5, Brand.selectBrand(0), 128, 6, 6.5, 32, 4000, "Black"));
         phones.add(new Phone(2, "iPhone 11 64 GB", 7379.0, 0, 5, Brand.selectBrand(2), 64, 6, 6.1, 5, 3046, "Blue"));
         phones.add(new Phone(3, "Redmi Note 10Pro 8 GB", 4012, 0.5, 5, Brand.selectBrand(7), 128, 12, 6.5, 35, 4000, "White"));
     }
-
 
     public static void phoneMenu() {
         boolean showMenu = true;
@@ -54,7 +52,6 @@ public class Phone extends Product {
                     showMenu = false;
                     break;
             }
-
 
         }
 
@@ -140,12 +137,8 @@ public class Phone extends Product {
             System.out.println("Brand not found !");
         }
 
-
         System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------");
-
-
     }
-
 
     public static void addPhone() {
         System.out.print("Enter product name : ");
@@ -185,7 +178,6 @@ public class Phone extends Product {
             }
         }
 
-        // Assign the new phone an ID one integer higher than the maximum ID
         int newPhoneId = maxId + 1;
 
         phones.add(new Phone(newPhoneId, name, price, discountRate, unitInStock, Brand.selectBrand(selectedBrand), storage, ram, screenSize, camera, batteryPower, color));

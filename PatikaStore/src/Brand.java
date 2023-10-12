@@ -42,8 +42,6 @@ public class Brand  {
             System.out.println(id+". "+b.brandName);
 
         }
-
-
     }
     public static Brand selectBrand(int x){
         return brands.get(x);
@@ -51,6 +49,4 @@ public class Brand  {
     public static String filterBrand(int x){
         return brands.get(x).getBrandName();
     }
-
-
 }

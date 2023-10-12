@@ -3,7 +3,6 @@ import java.util.Scanner;
 
 public class Notebook extends Product {
     static Scanner input = new Scanner(System.in);
-
     private int id;
     private static ArrayList<Notebook> notebooks = new ArrayList<>();
 
@@ -12,13 +11,11 @@ public class Notebook extends Product {
         this.id = id;
 
     }
-
     static {
         notebooks.add(new Notebook(1, "HUAWEI Matebook 14", 7000, 0.5, 5, Brand.selectBrand(3), 512, 16, 14));
         notebooks.add(new Notebook(2, "Lenovo V14 IGL", 3699, 0, 5, Brand.selectBrand(1), 1024, 8, 14));
         notebooks.add(new Notebook(3, "ASUS Tuf Gaming", 8199, 0, 5, Brand.selectBrand(5), 2048, 32, 15.6));
     }
-
 
     public static void notebookMenu() {
         boolean showMenu = true;
@@ -49,7 +46,6 @@ public class Notebook extends Product {
                     break;
             }
         }
-
     }
     public static void printAllNotebooks() {
         System.out.println("-----------------------------------------------------------------------------------------------------------");
@@ -103,15 +99,11 @@ public class Notebook extends Product {
                 a = true;
             }
         }
-
         if (!a) {
             System.out.println("Brand not found !");
         }
 
-
         System.out.println("-----------------------------------------------------------------------------------------------------------");
-
-
     }
 
     public static void printNotebook() {
@@ -161,7 +153,6 @@ public class Notebook extends Product {
         System.out.print("Enter product screen size (inch) : ");
         double screenSize = input.nextDouble();
 
-
         int maxId = 0;
         for (Notebook n : notebooks) {
             if (n.getId() > maxId) {
@@ -169,12 +160,10 @@ public class Notebook extends Product {
             }
         }
 
-        // Assign the new phone an ID one integer higher than the maximum ID
         int newNotebookId = maxId + 1;
 
         notebooks.add(new Notebook(newNotebookId, name, price, discountRate, unitInStock, Brand.selectBrand(selectedBrand), storage, ram, screenSize));
     }
-
     public static void deleteNotebook() {
         printNotebook();
         System.out.print("Select notebook by ID to delete : ");
@@ -182,7 +171,6 @@ public class Notebook extends Product {
         notebooks.remove(selectId);
 
     }
-
     @Override
     public int getId() {
         return id;

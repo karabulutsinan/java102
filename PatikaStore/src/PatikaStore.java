@@ -14,7 +14,6 @@ public class PatikaStore {
             System.out.print("Please make a choice : ");
             int selected = input.nextInt();
 
-
             switch (selected) {
                 case 1:
                     Notebook.notebookMenu();
@@ -26,7 +25,6 @@ public class PatikaStore {
                     Brand.printBrands();
                     System.out.println();
                     break;
-
                 case 0:
                     showMenu = false;
                     break;

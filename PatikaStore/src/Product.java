@@ -8,10 +8,9 @@ public abstract class Product {
     private int storage;
     private int ram;
     private double screenSize;
-    //private static ArrayList<Product> products = new ArrayList<>();
+
 
     public Product(String name, double price, double discountRate, int unitInStock, Brand brand, int storage, int ram, double screenSize) {
-        //this.id=products.size()+1;
         this.name = name;
         this.price = price;
         this.discountRate = discountRate;
@@ -21,11 +20,6 @@ public abstract class Product {
         this.ram = ram;
         this.screenSize = screenSize;
     }
-
-
-
-
-
     public int getId() {
         return id;
     }
