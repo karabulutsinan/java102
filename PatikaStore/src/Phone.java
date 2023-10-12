@@ -18,16 +18,16 @@ public class Phone extends Product {
     }
 
     static {
-        phones.add(new Phone(1, "SAMSUNG GALAXY A51", 3199.0, 0.5, 5, Brand.selectBrand(0), 128, 6, 6.5, 32, 4000, "Black"));
-        phones.add(new Phone(2, "iPhone 11 64 GB", 7379.0, 0, 5, Brand.selectBrand(2), 64, 6, 6.1, 5, 3046, "Blue"));
-        phones.add(new Phone(3, "Redmi Note 10Pro 8 GB", 4012, 0.5, 5, Brand.selectBrand(7), 128, 12, 6.5, 35, 4000, "White"));
+        phones.add(new Phone(1, "SAMSUNG GALAXY A51", 3199.0, 0.5, 5, Brand.selectBrand(7), 128, 6, 6.5, 32, 4000, "Black"));
+        phones.add(new Phone(2, "iPhone 11 64 GB", 7379.0, 0, 5, Brand.selectBrand(0), 64, 6, 6.1, 5, 3046, "Blue"));
+        phones.add(new Phone(3, "Redmi Note 10Pro 8 GB", 4012, 0.5, 5, Brand.selectBrand(8), 128, 12, 6.5, 35, 4000, "White"));
     }
 
     public static void phoneMenu() {
         boolean showMenu = true;
         while (showMenu) {
             System.out.println("----Phone Operations-----");
-            System.out.println("1-List all Phones");
+            System.out.println("1-List or filter Phones");
             System.out.println("2-Add a New Phone");
             System.out.println("3-Delete a Phone");
             System.out.println("0-Exit");
@@ -184,10 +184,16 @@ public class Phone extends Product {
     }
 
     public static void deletePhone() {
-        printPhones();
+        printAllPhones();
         System.out.print("Select phone by ID to delete : ");
-        int selectId = input.nextInt() - 1;
-        phones.remove(selectId);
+        int selectId = input.nextInt() ;
+
+        for (Phone n : phones) {
+            if (n.getId() == selectId) {
+                phones.remove(n);
+                break;
+            }
+        }
 
     }
 

@@ -12,16 +12,16 @@ public class Notebook extends Product {
 
     }
     static {
-        notebooks.add(new Notebook(1, "HUAWEI Matebook 14", 7000, 0.5, 5, Brand.selectBrand(3), 512, 16, 14));
-        notebooks.add(new Notebook(2, "Lenovo V14 IGL", 3699, 0, 5, Brand.selectBrand(1), 1024, 8, 14));
-        notebooks.add(new Notebook(3, "ASUS Tuf Gaming", 8199, 0, 5, Brand.selectBrand(5), 2048, 32, 15.6));
+        notebooks.add(new Notebook(1, "HUAWEI Matebook 14", 7000, 0.5, 5, Brand.selectBrand(4), 512, 16, 14));
+        notebooks.add(new Notebook(2, "Lenovo V14 IGL", 3699, 0, 5, Brand.selectBrand(5), 1024, 8, 14));
+        notebooks.add(new Notebook(3, "ASUS Tuf Gaming", 8199, 0, 5, Brand.selectBrand(1), 2048, 32, 15.6));
     }
 
     public static void notebookMenu() {
         boolean showMenu = true;
         while(showMenu){
             System.out.println("----Notebook Operations-----");
-            System.out.println("1-List all Notebooks");
+            System.out.println("1-List or filter Notebooks");
             System.out.println("2-Add a New Notebook");
             System.out.println("3-Delete a Notebook");
             System.out.println("0-Exit");
@@ -165,10 +165,16 @@ public class Notebook extends Product {
         notebooks.add(new Notebook(newNotebookId, name, price, discountRate, unitInStock, Brand.selectBrand(selectedBrand), storage, ram, screenSize));
     }
     public static void deleteNotebook() {
-        printNotebook();
+        printAllNotebooks();
         System.out.print("Select notebook by ID to delete : ");
-        int selectId = input.nextInt() - 1;
-        notebooks.remove(selectId);
+        int selectId = input.nextInt() ;
+
+        for (Notebook n : notebooks) {
+            if (n.getId() == selectId) {
+                notebooks.remove(n);
+                break;
+            }
+        }
 
     }
     @Override
